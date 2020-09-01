@@ -11460,6 +11460,11 @@ pub mod resources {
             where
                 T: ::serde::de::DeserializeOwned,
             {
+                println!("+++++++++++++++++++++++++++++++++++");
+                println!("_path: {:#?}", &self._path());
+                println!("+++++++++++++++++++++++++++++++++++");
+                println!("_request: {:#?}", self._request(&self._path())?);
+                
                 let req = self._request(&self._path())?;
                 let req = req.json(&self.request);
                 Ok(crate::error_from_response(req.send()?)?.json()?)
