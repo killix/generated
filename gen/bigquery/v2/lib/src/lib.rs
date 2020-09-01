@@ -11434,6 +11434,7 @@ pub mod resources {
             pub fn execute_with_default_fields(
                 self,
             ) -> Result<crate::schemas::QueryResponse, crate::Error> {
+                println!("++++++++++++++++!!!+++++++++++++++++++");
                 self.execute_with_fields(None::<&str>)
             }
             #[doc = r" Execute the given operation. This will provide a `fields`"]
