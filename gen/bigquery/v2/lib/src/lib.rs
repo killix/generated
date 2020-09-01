@@ -11466,6 +11466,15 @@ pub mod resources {
                 println!("+++++++++++++++++++++++++++++++++++");
                 println!("_request: {:#?}", self._request(&self._path())?);
                 
+                println!("_request: {:#?}", [("alt", &self.alt)]);
+                println!("_request: {:#?}", [("fields", &self.fields)]);
+                println!("_request: {:#?}", [("key", &self.key)]);
+                println!("_request: {:#?}", [("oauth_token", &self.oauth_token)]);
+                println!("_request: {:#?}", [("pretty_print", &self.pretty_print)]);
+                println!("_request: {:#?}", [("quota_user", &self.quota_user)]);
+                println!("_request: {:#?}", [("user_ip", &self.user_ip)]);
+                println!("&self.request: {:#?}", &self.request);
+                              
                 let req = self._request(&self._path())?;
                 let req = req.json(&self.request);
                 Ok(crate::error_from_response(req.send()?)?.json()?)
